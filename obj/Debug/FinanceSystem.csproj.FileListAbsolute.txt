@@ -1,0 +1,17 @@
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.csprojAssemblyReference.cache
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.Home.resources
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.Properties.Resources.resources
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.csproj.GenerateResource.cache
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\FinanceSystem.exe.config
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\FinanceSystem.exe
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\FinanceSystem.pdb
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.csproj.CopyComplete
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.exe
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.pdb
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.OrderControl.resources
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.ProductControl.resources
+C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.EditProduct.resources
