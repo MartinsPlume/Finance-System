@@ -1,3 +1,17 @@
 # Finance-System
-Course assignment Programming, Finance system manipulates database Controller database with APIs
-The idea of this system is to control the database, that is web api .net, which receives "orders" from "webshop" which is made with react.
+
+Part of Study Project "Online Store"
+
+.Net Framework WinForm.
+
+Makes API calls (CRUD) to .Net Web api with database:
+https://github.com/MartinsPlume/DatabaseController/tree/master
+
+Finance-System allows:
+
+- Confirms and invoices orders to customers by sending invoices using e-mail service.
+- Controls product data
+
+
+
+**MPLU**
