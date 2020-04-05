@@ -86,11 +86,11 @@ namespace FinanceSystem.forms
         {
             if (_newProduct)
             {
-                await HttpService.CreateProductAsync(_product);
+                await HttpClientService.CreateProductAsync(_product);
             }
             else
             {
-                await HttpService.UpdateProductAsync(_product);
+                await HttpClientService.UpdateProductAsync(_product);
             }
 
             this.Close();

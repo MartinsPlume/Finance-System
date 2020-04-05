@@ -51,7 +51,6 @@
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.Size = new System.Drawing.Size(1184, 709);
             this.dataGridViewOrders.TabIndex = 0;
-            this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
             // 
             // panelTop
             // 

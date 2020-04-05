@@ -1,6 +1,6 @@
 ﻿namespace FinanceSystem.models
 {
-    class Order
+    public class Order
     {
         public int OrderId { get; set; }
         public string Name { get; set; }

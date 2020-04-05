@@ -76,11 +76,12 @@
     <Compile Include="forms\ProductControl.Designer.cs">
       <DependentUpon>ProductControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="HttpService.cs" />
+    <Compile Include="HttpClientService.cs" />
     <Compile Include="models\Order.cs" />
     <Compile Include="models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InvoiceMail.cs" />
     <EmbeddedResource Include="forms\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
