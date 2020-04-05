@@ -52,44 +52,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditProduct.cs">
+    <Compile Include="forms\EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditProduct.Designer.cs">
+    <Compile Include="forms\EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderControl.cs">
+    <Compile Include="forms\OrderControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderControl.Designer.cs">
+    <Compile Include="forms\OrderControl.Designer.cs">
       <DependentUpon>OrderControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductControl.cs">
+    <Compile Include="forms\ProductControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductControl.Designer.cs">
+    <Compile Include="forms\ProductControl.Designer.cs">
       <DependentUpon>ProductControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpService.cs" />
+    <Compile Include="models\Order.cs" />
+    <Compile Include="models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EditProduct.resx">
+    <EmbeddedResource Include="forms\EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderControl.resx">
+    <EmbeddedResource Include="forms\OrderControl.resx">
       <DependentUpon>OrderControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductControl.resx">
+    <EmbeddedResource Include="forms\ProductControl.resx">
       <DependentUpon>ProductControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

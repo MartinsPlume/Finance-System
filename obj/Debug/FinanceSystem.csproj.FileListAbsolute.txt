@@ -15,3 +15,20 @@ C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug
 C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.OrderControl.resources
 C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.ProductControl.resources
 C:\Users\Martin\Documents\NET\Kursa darbs\Finance System\FinanceSystem\obj\Debug\FinanceSystem.EditProduct.resources
+D:\Documents\NET\Finance-System\bin\Debug\FinanceSystem.exe.config
+D:\Documents\NET\Finance-System\bin\Debug\FinanceSystem.exe
+D:\Documents\NET\Finance-System\bin\Debug\FinanceSystem.pdb
+D:\Documents\NET\Finance-System\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\NET\Finance-System\bin\Debug\System.Net.Http.Formatting.dll
+D:\Documents\NET\Finance-System\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\NET\Finance-System\bin\Debug\System.Net.Http.Formatting.xml
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.csprojAssemblyReference.cache
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.forms.EditProduct.resources
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.forms.Home.resources
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.forms.OrderControl.resources
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.forms.ProductControl.resources
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.Properties.Resources.resources
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.csproj.GenerateResource.cache
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.csproj.CopyComplete
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.exe
+D:\Documents\NET\Finance-System\obj\Debug\FinanceSystem.pdb
