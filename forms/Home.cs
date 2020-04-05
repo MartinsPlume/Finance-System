@@ -5,28 +5,28 @@ namespace FinanceSystem.forms
 {
     public partial class Home : Form
     {
-        public OrderControl orderControl;
-        public ProductControl productControl;
+        private OrderControl _orderControl;
+        private ProductControl _productControl;
         public Home()
         {
             InitializeComponent();
         }
 
-        void Home_Load(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
 
         }
 
-        public void buttonProductControl_Click(object sender, EventArgs e)
+        private void buttonProductControl_Click(object sender, EventArgs e)
         {
-            productControl = new ProductControl();
-            productControl.Show();
+            _productControl = new ProductControl();
+            _productControl.Show();
         }
 
-        public void buttonOrderControl_Click(object sender, EventArgs e)
+        private void buttonOrderControl_Click(object sender, EventArgs e)
         {
-            orderControl = new OrderControl();
-            orderControl.Show();
+            _orderControl = new OrderControl();
+            _orderControl.Show();
         }
     }
 }
