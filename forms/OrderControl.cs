@@ -14,14 +14,21 @@ namespace FinanceSystem.forms
         {
             InitializeComponent();
             RefreshTable();
-            _products = HttpClientService.GetProductData();
         }
 
-        void RefreshTable()
+        private void RefreshTable()
         {
-            _orders = HttpClientService.GetOrderData();
-            dataGridViewOrders.DataSource = _orders;
-            _products = HttpClientService.GetProductData();
+            try
+            {
+                _orders = HttpClientService.GetOrderData();
+                dataGridViewOrders.DataSource = _orders;
+                _products = HttpClientService.GetProductData();
+            }
+            catch (Exception notConnected)
+            {
+                Console.WriteLine("Exception --> "+ notConnected);
+                MessageBox.Show("Can't connect to database","Connection error!");
+            }
         }
 
         private async void buttonInvoice_Click(object sender, EventArgs e)

@@ -17,8 +17,16 @@ namespace FinanceSystem.forms
 
         private void RefreshTable()
         {
-            _products = HttpClientService.GetProductData();
-            dataGridViewProducts.DataSource = _products;
+            try
+            {
+                _products = HttpClientService.GetProductData();
+                dataGridViewProducts.DataSource = _products;
+            }
+            catch (Exception notConnected)
+            {
+                Console.WriteLine("Exception --> "+ notConnected);
+                MessageBox.Show("Can't connect to database","Connection error!");
+            }
         }
 
         private async void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
