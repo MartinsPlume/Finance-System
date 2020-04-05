@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinanceSystem.models;
 
@@ -10,17 +8,15 @@ namespace FinanceSystem.forms
     {
         private readonly bool _newProduct;
         private readonly Product _product = new Product();
-            
-        
 
         public EditProduct(Product editProduct)
         {
-            
             InitializeComponent();
-            try {
+            try
+            {
                 Text = editProduct.ProductName;
                 _product.ProductId = editProduct.ProductId;
-                textBoxProductName.Text= editProduct.ProductName;
+                textBoxProductName.Text = editProduct.ProductName;
                 textBoxProductCode.Text = editProduct.ProductCode;
                 numericUpDownPrice.Value = Convert.ToDecimal(editProduct.Price);
                 numericUpDownRetail.Value = Convert.ToDecimal(editProduct.RetailPrice);
@@ -59,11 +55,16 @@ namespace FinanceSystem.forms
                 _product.ProductStock = Convert.ToInt32(numericUpDownStock.Value);
                 _product.ProductReserved = Convert.ToInt32(numericUpDownReserved.Value);
 
-                if (!string.IsNullOrEmpty(_product.ProductName) |
-                    !string.IsNullOrEmpty(_product.ProductCode) |
-                    !_product.Price.Equals(0) |
-                    !_product.RetailPrice.Equals(0) |
-                    !_product.Weight.Equals(0))
+                if (!(!string.IsNullOrEmpty(_product.ProductName) |
+                      !string.IsNullOrEmpty(_product.ProductCode) |
+                      !_product.Price.Equals(0) |
+                      !_product.RetailPrice.Equals(0) |
+                      !_product.Weight.Equals(0)))
+                {
+                    MessageBox.Show("Fill out all fields!");
+                    checkBoxConfirmChanges.Checked = false;
+                }
+                else
                 {
                     try
                     {
@@ -73,11 +74,6 @@ namespace FinanceSystem.forms
                     {
                         Console.WriteLine("Error converting to Json " + jsonError);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Fill out all fields!");
-                    checkBoxConfirmChanges.Checked = false;
                 }
             }
             else
@@ -96,10 +92,8 @@ namespace FinanceSystem.forms
             {
                 await HttpService.UpdateProductAsync(_product);
             }
+
             this.Close();
         }
-        
-
-
     }
 }
