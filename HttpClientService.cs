@@ -51,7 +51,7 @@ namespace FinanceSystem
             {
                 OrderId = oldOrder.OrderId,
                 Name = oldOrder.Name,
-                email = oldOrder.email,
+                Email = oldOrder.Email,
                 PostalCode = oldOrder.PostalCode,
                 Status = "Invoiced",
                 ProductId = oldOrder.ProductId

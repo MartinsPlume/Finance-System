@@ -68,7 +68,7 @@ namespace FinanceSystem.forms
 
         private static void SendInvoice(Order order)
         {
-            var invoiceMail = new InvoiceMail(order.email, order.OrderId, order.Name, order.PostalCode);
+            var invoiceMail = new InvoiceMail(order.Email, order.OrderId, order.Name, order.PostalCode);
             try
             {
                 invoiceMail.SendInvoiceMail();
