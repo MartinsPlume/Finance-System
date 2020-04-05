@@ -1,4 +1,4 @@
-﻿namespace FinanceSystem
+﻿namespace FinanceSystem.forms
 {
     partial class OrderControl
     {

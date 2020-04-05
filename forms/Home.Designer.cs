@@ -1,4 +1,4 @@
-﻿namespace FinanceSystem
+﻿namespace FinanceSystem.forms
 {
     partial class Home
     {
@@ -34,9 +34,9 @@
             // 
             // buttonOrderControl
             // 
-            this.buttonOrderControl.Location = new System.Drawing.Point(12, 12);
+            this.buttonOrderControl.Location = new System.Drawing.Point(14, 14);
             this.buttonOrderControl.Name = "buttonOrderControl";
-            this.buttonOrderControl.Size = new System.Drawing.Size(175, 340);
+            this.buttonOrderControl.Size = new System.Drawing.Size(204, 392);
             this.buttonOrderControl.TabIndex = 0;
             this.buttonOrderControl.Text = "Order Control";
             this.buttonOrderControl.UseVisualStyleBackColor = true;
@@ -44,9 +44,9 @@
             // 
             // buttonProductControl
             // 
-            this.buttonProductControl.Location = new System.Drawing.Point(197, 12);
+            this.buttonProductControl.Location = new System.Drawing.Point(230, 14);
             this.buttonProductControl.Name = "buttonProductControl";
-            this.buttonProductControl.Size = new System.Drawing.Size(175, 340);
+            this.buttonProductControl.Size = new System.Drawing.Size(204, 392);
             this.buttonProductControl.TabIndex = 2;
             this.buttonProductControl.Text = "Product Control";
             this.buttonProductControl.UseVisualStyleBackColor = true;
@@ -54,18 +54,17 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(448, 417);
             this.Controls.Add(this.buttonProductControl);
             this.Controls.Add(this.buttonOrderControl);
-            this.MaximumSize = new System.Drawing.Size(800, 800);
-            this.MinimumSize = new System.Drawing.Size(400, 400);
+            this.MaximumSize = new System.Drawing.Size(931, 917);
+            this.MinimumSize = new System.Drawing.Size(464, 456);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion
