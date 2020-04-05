@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using FinanceSystem.models;
@@ -13,36 +14,45 @@ namespace FinanceSystem
             BaseAddress = new Uri("https://localhost:44361/")
         };
 
+        private static HttpResponseMessage _response;
+
         public static async Task CreateProductAsync(Product product)
         {
             
-            var response = await Client.PostAsJsonAsync(
+            _response = await Client.PostAsJsonAsync(
                 "api/product", product);
-            response.EnsureSuccessStatusCode();
+            _response.EnsureSuccessStatusCode();
 
             // return URI of the created resource.
         }
-
+        
         public static IEnumerable<Product> GetProductData()
         {
-            var response = Client.GetAsync("api/product").Result;
-            return response.Content.ReadAsAsync<IEnumerable<Product>>().Result;
+            _response = Client.GetAsync("api/product").Result;
+            return _response.Content.ReadAsAsync<IEnumerable<Product>>().Result;
         }
         
         public static async Task UpdateProductAsync(Product product)
         {
-            var response = await Client.PutAsJsonAsync(
+            _response = await Client.PutAsJsonAsync(
                 $"api/product/{product.ProductId}", product);
-            response.EnsureSuccessStatusCode();
+            _response.EnsureSuccessStatusCode();
 
             // Deserialize the updated product from the response body.
-            await response.Content.ReadAsAsync<Product>();
+            await _response.Content.ReadAsAsync<Product>();
         }
-        
+
+        public static async Task<HttpStatusCode> DeleteProductAsync(string id)
+        {
+            _response = await Client.DeleteAsync(
+                $"api/product/{id}");
+            return _response.StatusCode;
+        }
+
         public static IEnumerable<Order> GetOrderData()
         {
-            var response = Client.GetAsync("api/order").Result;
-            return response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
+            _response = Client.GetAsync("api/order").Result;
+            return _response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
         }
 
         public static async Task UpdateOrderAsync(Order oldOrder)
@@ -57,12 +67,12 @@ namespace FinanceSystem
                 ProductId = oldOrder.ProductId
             };
 
-            var response = await Client.PutAsJsonAsync(
+            _response = await Client.PutAsJsonAsync(
                 $"api/order/{oldOrder.OrderId}", order);
-            response.EnsureSuccessStatusCode();
+            _response.EnsureSuccessStatusCode();
 
             // Deserialize the updated product from the response body.
-            order = await response.Content.ReadAsAsync<Order>();
+            await _response.Content.ReadAsAsync<Order>();
         }
     }
 }

@@ -10,8 +10,7 @@ namespace FinanceSystem.forms
 {
     public partial class ProductControl : Form
     {
-        IEnumerable<Product> products;
-        
+        private IEnumerable<Product> _products;
 
         public ProductControl()
         {
@@ -19,59 +18,39 @@ namespace FinanceSystem.forms
             RefreshTable();
         }
 
-        void RefreshTable()
+        private void RefreshTable()
         {
-            products = GetProductData();
-            dataGridViewProducts.DataSource = products;
+            _products = HttpClientService.GetProductData();
+            dataGridViewProducts.DataSource = _products;
         }
 
-        IEnumerable<Product> GetProductData()
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44361//");
-            HttpResponseMessage response = client.GetAsync("api/product").Result;
-
-            return response.Content.ReadAsAsync<IEnumerable<Product>>().Result;
-        }
-
-        async void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-            e.RowIndex >= 0)
+            if (!(senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn) || e.RowIndex < 0) return;
+            var id = int.Parse((dataGridViewProducts[2, e.RowIndex].Value).ToString());
+            foreach (var product in _products)
             {
-                int id = Int32.Parse((dataGridViewProducts[2, e.RowIndex].Value).ToString());
-                foreach (var product in products)
+                if (!id.Equals(product.ProductId)) continue;
+                switch (e.ColumnIndex)
                 {
-                    if (id.Equals(product.ProductId))
+                    case 0:
                     {
-                        if (e.ColumnIndex == 0)
+                        var editProduct = new EditProduct(product);
+                        editProduct.Show();
+                        break;
+                    }
+                    case 1:
+                    {
+                        var dialogResult = MessageBox.Show("Confirm deleting " + product.ProductName + "!", "Are You sure?", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
                         {
-                            EditProduct editProduct = new EditProduct(product);
-                            editProduct.Show();
+                            Console.WriteLine(await HttpClientService.DeleteProductAsync(product.ProductId.ToString()));
                         }
-                        else if (e.ColumnIndex == 1)
-                        {
-                            DialogResult dialogResult = MessageBox.Show("Confirm deleting " + product.ProductName + "!", "Are You sure?", MessageBoxButtons.YesNo);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                Console.WriteLine(await DeleteProductAsync(product.ProductId.ToString()));
-                            }
-                        }
-
-
+                        break;
                     }
                 }
             }
-        }
-
-        static async Task<HttpStatusCode> DeleteProductAsync(string id)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44361//");
-            HttpResponseMessage response = await client.DeleteAsync(
-                $"api/product/{id}");
-            return response.StatusCode;
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
@@ -81,7 +60,7 @@ namespace FinanceSystem.forms
 
         private void buttonAddNew_Click(object sender, EventArgs e)
         {
-            EditProduct editProduct = new EditProduct();
+            var editProduct = new EditProduct();
             editProduct.Show();
         }
     }
